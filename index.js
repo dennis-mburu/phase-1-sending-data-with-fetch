@@ -6,15 +6,15 @@ function submitData(){
         method: "POST",
         headers: {
             "Content-Type": "application/json", 
-            "Accept": "application/json"
+            "Accept": "application/json",
         },
         body: JSON.stringify({
             name: "Steve", 
-            email: "steve@steve.com"
+            email: "steve@steve.com",
         })
     }).then(resp => resp.json())
     .then(data => document.querySelector('body').textContent = data.id)
-    .catch(message => document.querySelector('body').textContent = message)
+    .catch(error => document.querySelector('body').textContent = error.message)
     )
 }
 
